@@ -24,7 +24,6 @@ class PaymentsController < ApplicationController
   def create
     @payment = current_user.payments.build(payment_params)
 
-
     if @payment.save
       @group_id = params[:group_id]
       @group_payment = GroupPayment.new(group_id: @group_id, payment_id: @payment.id)
