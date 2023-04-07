@@ -13,6 +13,7 @@ class PaymentsController < ApplicationController
 
   def new
     @group_id = params[:group_id]
+    @group = Group.find(@group_id)
     @payment = Payment.new
   end
 
@@ -23,9 +24,9 @@ class PaymentsController < ApplicationController
 
   def create
     @payment = current_user.payments.build(payment_params)
+    @group_id = params[:payment][:group_id] 
 
     if @payment.save
-      @group_id = params[:group_id]
       @group_payment = GroupPayment.new(group_id: @group_id, payment_id: @payment.id)
 
       if @group_payment.save
