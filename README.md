@@ -59,7 +59,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://recipe-ps-app.herokuapp.com/)
+- [Live Demo Link](https://budget-app.herokuapp.com/)
 
 <!-- Features -->
 
