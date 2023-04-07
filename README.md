@@ -165,6 +165,7 @@ A list of resources that i find helpful and would like to give credit to :
 - [Stackoverflow ](https://stackoverflow.com)
 - [Ruby](https://www.ruby-lang.org/en/)
 - [Ruby on Rails](https://guides.rubyonrails.org/)
+- [Gregoire Vella ( author of the original design)](https://www.behance.net/gallery/19759151/Snapscan-iOs-design-and-branding?tracking_source=)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
