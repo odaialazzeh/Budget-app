@@ -265,6 +265,31 @@ h2 {
   margin: 0 0 64px;
 }
 
+.total-spending {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  color: #434b54;
+  background-color: white;
+  box-shadow: 0 3px 10px #0003;
+  margin-bottom: 1em;
+  padding: 0 1em;
+}
+
+.group-name {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.group-date {
+  color: #434b54;
+  font-size: x-small;
+  margin-top: -0.5em;
+}
+
 .payments-index {
   margin: 0 0 64px;
 }
@@ -355,4 +380,17 @@ h2 {
   align-items: center;
   margin-top: 5em;
   color: white;
+}
+
+.dropdown-group label {
+  color: #434b54;
+  margin-left: 0.5em;
+}
+
+.dropdown-group select {
+  font-size: 16px;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: #434b54;
 }
