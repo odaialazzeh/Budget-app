@@ -28,7 +28,7 @@
 
 # 📖 Budget app <a name="about-project"></a>
 
-**Budget app** The Budget app is a software application that helps users manage their finances by tracking and categorizing their income and expenses. It allows users to create and manage a budget, set financial goals, and track their progress towards those goals. Budget apps typically provide features such as bill reminders, transaction categorization, and budget alerts to help users make informed financial decisions. 
+**Budget app** The Budget app is a mobile web application where you can manage your budget: you have a list of transactions associated with a category, so that you can see how much money you spent and on what.
 
 ## 🛠 Built With <a name="built-with"></a>
 
