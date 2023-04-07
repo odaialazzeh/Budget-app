@@ -1,0 +1,29 @@
+<div class="payment-row" id="<%= dom_id payment %>">
+  <br />
+  <p>
+    <strong>Name:</strong>
+    <%= payment.name %>
+  </p>
+  <p>
+    <strong>Transaction N </strong>
+    <%= payment.id %>
+  </p>
+  <p>
+    <strong></strong>
+    <%= payment.created_at %>
+  </p>
+  <p>
+    <strong>TOTAL PAYMENT:</strong>
+    $<%= payment.amount %>
+  </p>
+  <div class="icons">
+    <%= button_to  @group_payment, method: :delete, class: "remove-button" do %>
+      <img src="<%= asset_path('remove-icon.png') %>">
+      <p>Remove</p>
+    <% end %>
+    <div class="edit-img">
+      <%= link_to image_tag("edit.png", alt: "Edit"), edit_group_payment_path(@group, @payment), class: "link-header" %>
+      <p>Edit</p>
+    </div>
+  </div>
+</div>

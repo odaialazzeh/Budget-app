@@ -1,0 +1,9 @@
+<h1>Group payments</h1>
+
+<div id="group_payments">
+  <% @group_payments.each do |group_payment| %> <%= render group_payment %>
+  <p><%= link_to "Show this group payment", group_payment %></p>
+  <% end %>
+</div>
+
+<%= link_to "New group payment", new_group_group_payment_path %>

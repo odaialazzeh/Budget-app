@@ -1,0 +1,18 @@
+<%= form_with(model: @payment, url: group_payments_path, method: :post) do
+|form| %> <% if group_payment.errors.any? %>
+<div style="color: red">
+  <h2>
+    <%= pluralize(group_payment.errors.count, "error") %> prohibited this
+    group_payment from being saved:
+  </h2>
+
+  <ul>
+    <% group_payment.errors.each do |error| %>
+    <li><%= error.full_message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<div><%= form.submit %></div>
+<% end %>

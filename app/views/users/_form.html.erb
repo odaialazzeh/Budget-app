@@ -1,0 +1,50 @@
+<div class="log-container">
+  <div class="edit-user">
+    <%= form_with(model: user) do |form| %> <% if user.errors.any? %>
+        <div style="color: red">
+          <h2>
+            <%= pluralize(user.errors.count, "error") %> prohibited this user from
+            being saved:
+          </h2>
+          <ul>
+            <% user.errors.each do |error| %>
+              <li><%= error.full_message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <div class="field">
+        <%= form.label :name, style: "display: block" %> <%= form.text_field :name
+      %>
+      </div>
+      <div class="field">
+        <%= form.label :avatar, class: 'nav-menu-row' %> <%= form.file_field :avatar, accept: 'image/*' %>
+      </div>
+      <div class="field">
+        <%= form.label :email %><br />
+        <%= form.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
+      <div class="field">
+        <%= form.label :current_password %> <br />
+        <%= form.password_field :current_password, autocomplete: "current-password" %>
+      </div>
+      <div class="field">
+        <%= form.label :new_password %> <br />
+        <%= form.password_field :password, autocomplete: "new-password" %>
+        <% if @minimum_password_length %>
+          <br />
+          <em><%= @minimum_password_length %> characters minimum</em>
+        <% end %>
+      </div>
+      <div class="field">
+        <%= form.label :password_confirmation %><br />
+        <%= form.password_field :password_confirmation, autocomplete: "new-password" %>
+      </div>
+      <div class="actions">
+        <%= form.submit "Update user", class: "btn-submit" %>
+      </div>
+    <% end %>
+    <h4>Are you sure that you want delete your account</h4>
+      <div><%= button_to "Delete my account", registration_path(user), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete %></div>
+  </div>
+</div>

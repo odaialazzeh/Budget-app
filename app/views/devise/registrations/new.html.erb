@@ -1,0 +1,22 @@
+<div class="group-index">
+  <div class="group-header">
+    <nav class="group-navbar">
+    <%- if controller_name != 'sessions' %>
+      <a href="<%= new_session_path(resource_name) %>">
+    
+        <img class="burger-image"
+          alt="burger menu icon"
+          src="<%= asset_path('left-arrow-icon.svg') %>"
+          onclick="showMenu()">
+      </a>
+      <%end%>
+    </nav>
+    <p class="header-title">REGISTER</p>
+  </div>
+</div>
+
+
+<%= render "form", user: @user %>
+
+
+</div>

@@ -1,0 +1,41 @@
+<% content_for :javascript_includes do %> <%= javascript_include_tag "links.js"
+%> <% end %> <%= form_with(model: group) do |form| %> <% if group.errors.any? %>
+<div style="color: red">
+  <h2>
+    <%= pluralize(group.errors.count, "error") %> prohibited this group from
+    being saved:
+  </h2>
+
+  <ul>
+    <% group.errors.each do |error| %>
+    <li><%= error.full_message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<div class="field"><%= form.text_field :name, placeholder: "Name" %></div>
+
+<div class="field">
+  <%= form.text_field :icon, placeholder: "Link to icon", class: "icon_link" %>
+</div>
+
+<h2>Input the link to icon image, or select the one from below:</h2>
+
+<div class="group-links">
+  <% icon_links.each do |link| %>
+  <div>
+    <img
+      class="group-image"
+      src="<%= link %>"
+      alt="icon"
+      onclick="selectLink('<%= link %>')"
+    />
+  </div>
+  <% end %>
+</div>
+
+<div class="pleaseholder"></div>
+
+<div class="btn-bottom"><%= form.submit %></div>
+<% end %>
