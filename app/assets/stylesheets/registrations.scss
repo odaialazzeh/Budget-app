@@ -1,0 +1,62 @@
+
+.log-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.log-container a {
+  text-decoration: none;
+  color: #434b54;
+}
+
+.log-container a:hover {
+  color: #7e868f;
+}
+
+.sign-up,
+.log-in,
+.reset-password,
+.email-instructions,
+.edit-user {
+  color: #434b54;
+  background-color: white;
+  box-shadow: 5px 0 15px #0000004d;
+  width: 20em;
+  height: 100%;
+  padding: 1em;
+  margin-top: 3em;
+  border-radius: 0.5em;
+}
+
+.field input {
+  padding: 0.5em;
+  margin-bottom: 0.5em;
+  width: 70%;
+  font-family: 'Poppins', sans-serif;
+  border: none;
+  border-bottom: 1px solid #d3d3d3;
+}
+
+.actions,
+.new_user input[type="submit"] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1em;
+}
+
+.actions .btn-submit,
+.new_user input[type="submit"] {
+  padding: 0.7em 1em;
+  width: 100%;
+  color: white;
+  font-weight: 500;
+  font-size: medium;
+  border: none;
+  background-color: #3778c2;
+  border-radius: 0.5em;
+  cursor: pointer;
+  margin-bottom: 2em;
+}

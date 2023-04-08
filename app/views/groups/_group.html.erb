@@ -1,0 +1,18 @@
+<div class="group-item" id="<%= dom_id group %>">
+  <img class="group-image" src="<%= group.icon %>" alt="<%= group.name %>" />
+  <div class="group-details">
+    <p><%= group.name %></p>
+    <p>$<%= group.total_amount %></p>
+    <div class="icons">
+      <%= button_to group_path(group), method: :delete, class: "remove-button" do %>
+        <img src="<%= asset_path('remove-icon.png') %>" />
+        <p>Remove</p>
+      <% end %>
+      <div class="edit-img">
+        <%= link_to image_tag("edit.png", alt: "Edit"), edit_group_path(group),
+        class: "link-header" %>
+        <p>Edit</p>
+      </div>
+    </div>
+  </div>
+</div>

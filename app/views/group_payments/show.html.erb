@@ -1,0 +1,9 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @group_payment %>
+
+<div>
+  <%= link_to "Edit this group payment", edit_group_payment_path(@group_payment)
+  %> | <%= link_to "Back to group payments", group_payments_path %> <%=
+  button_to "Destroy this group payment", @group_payment, method: :delete %>
+</div>

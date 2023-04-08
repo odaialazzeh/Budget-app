@@ -1,0 +1,57 @@
+<section class="group">
+  <nav class="nav-menu">
+    <div class="nav-menu-details">
+      <span class="std-color">
+        <img class="profile-image"
+        alt="profile menu icon"
+        src="<%= current_user.avatar.attached? ? url_for(current_user.avatar) : asset_path('profile-icon.png') %>">
+      </span>
+      <span class="std-color">
+        <% if user_signed_in? %>
+          <span>Hello <strong><%= current_user.name %></strong></span>
+        <% end %>
+      </span>
+      <div class="std-color">
+        <div><%= link_to "Edit this user", edit_user_path(current_user) %></div>
+        <%= button_to "SIGN OUT", destroy_user_session_path, method: :delete, class: "btn-signout" %>
+      </div>
+    </div>
+  </nav>
+  <div class="group-index">
+    <div class="group-header">
+      <nav class="group-navbar">
+        <img class="burger-image"
+          alt="burger menu icon"
+          onclick="showMenu()"
+          src="<%= asset_path('hamburger-icon.png') %>">
+      </nav>
+      <p class="header-title">CATEGORIES</p>
+    </div>
+    <div class="total-spending">
+      <p>Total Spending: </p>
+      <p>$ <%= total_user_amount %></p>
+    </div>
+    <div class="group-container" id="groups">
+      <% @groups.each do |group| %>
+        <div class="group-item" id="<%= dom_id group %>">
+          <%= link_to group_path(group.id), class: "group-link" do %>
+            <img class="group-image" src="<%= group.icon %>" alt="<%= group.name %>" />
+          <% end %>
+          <div class="group-details">
+            <div class="group-name">
+              <p><%= group.name %></p>
+              <div class="group-date"><%= group.created_at.strftime('%B %d, %Y') %></div>
+            </div>
+            <p>$<%= group.total_amount%></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="footer">
+      <%= link_to "ADD CATEGORY", new_group_path, class: "btn-bottom" %>
+    </div>
+  </div>
+</section>
+<% content_for :javascript_includes do %>
+  <%= javascript_include_tag "menu.js" %>
+<% end %>

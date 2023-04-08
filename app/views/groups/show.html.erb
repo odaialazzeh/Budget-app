@@ -1,0 +1,22 @@
+<nav class="group-header">
+  <%= link_to "BACK", groups_path, class: "link-header" %>
+</nav>
+<%= render @group %>
+<div class="payments-index">
+  <div class="payments-container">
+    <% @payments.each do |payment| %> <%= link_to group_payment_path(@group.id,
+    payment.id), class: "group-link" do %>
+        <div class="payments-item">
+          <div class="payment-info">
+            <p><%= payment.name %></p>
+            <div class="group-date" style="color:blue;"><%= payment.created_at.strftime('%B %d, %Y') %></div>
+          </div>
+          <p>$<%= payment.amount %></p>
+        </div>
+      <% end %> <% end %>
+  </div>
+</div>
+<div>
+  <%= button_to "ADD TRANSACTION", new_group_payment_path(group_id: @group.id), method:
+  :get, class: "btn-bottom" %>
+</div>
